@@ -9,7 +9,6 @@ import { ApplicationCommandInputType,
     Command 
 } from "enmity/api/commands";
 import { sendReply } from "enmity/api/clyde";
-import fetch from "node-fetch";
 
 const Motivation: Plugin = {
    ...manifest,
@@ -27,10 +26,8 @@ const Motivation: Plugin = {
 
   execute: async function (args, message) : Promise<void> {
     const channelId = message.channel.id;
-    const quote: Array = fetch("https://raw.githubusercontent.com/Yan-Jobs/quotes/main/motivation/index.json");
-    const randomIndex = Math.floor(Math.random() * quote.length); 
-    const randomElement: string = quote[randomIndex];
-    sendReply(channelId, randomElement)
+    const quote = "Hello !";
+    sendReply(channelId, quote)
     
   }
 };
